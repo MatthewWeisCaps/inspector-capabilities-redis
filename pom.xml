@@ -4,29 +4,31 @@
     <modelVersion>4.0.0</modelVersion>
     <packaging>jar</packaging>
 
+    <parent>
+        <groupId>com.github.MatthewWeisCaps</groupId>
+        <artifactId>inspector-bom</artifactId>
+        <version>0.1-SNAPSHOT</version>
+    </parent>
+
     <groupId>org.sireum.hamr</groupId>
     <artifactId>inspector-capabilities-redis</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.1-SNAPSHOT</version>
     <name>inspector-capabilities-redis</name>
     <description>Common traits for HAMR Inspector libraries</description>
 
     <properties>
         <generated.repo>${project.basedir}/generated/repo</generated.repo>
-        <sireum.version>3.3.1</sireum.version>
-        <art.version>0.1.0-SNAPSHOT</art.version>
-        <java.version>11</java.version>
-        <scala.version>2.12.7</scala.version>
     </properties>
 
     <repositories>
         <repository>
-            <id>jitpack.io</id>
-            <url>https://jitpack.io</url>
-        </repository>
-        <repository>
             <id>project.local.generated</id>
             <name>generated</name>
             <url>file:${generated.repo}</url>
+        </repository>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
         </repository>
     </repositories>
 
@@ -34,23 +36,19 @@
         <dependency>
             <groupId>org.sireum</groupId>
             <artifactId>library_2.12</artifactId>
-            <version>${sireum.version}</version>
         </dependency>
         <dependency>
             <groupId>org.sireum</groupId>
             <artifactId>art_2.12</artifactId>
-            <version>${art.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.github.MatthewWeisCaps</groupId>
             <artifactId>inspector-capabilities</artifactId>
-            <version>master-97ad2111fb-1</version>
         </dependency>
         <dependency>
             <groupId>io.lettuce</groupId>
             <artifactId>lettuce-core</artifactId>
-            <version>5.2.1.RELEASE</version>
         </dependency>
     </dependencies>
 
@@ -59,21 +57,10 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>build-helper-maven-plugin</artifactId>
-                <version>3.0.0</version>
-                <executions>
-                    <execution>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>add-source</goal>
-                        </goals>
-                        <configuration>
-                            <sources>
-                                <source>src/main/java</source>
-                                <source>src/main/scala</source>
-                            </sources>
-                        </configuration>
-                    </execution>
-                </executions>
+            </plugin>
+            <plugin>
+                <groupId>net.alchim31.maven</groupId>
+                <artifactId>scala-maven-plugin</artifactId>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -111,12 +98,6 @@
                         <phase>validate</phase>
                         <configuration>
                             <rules>
-<!--                                <requireSameVersions>-->
-<!--                                    <dependencies>-->
-<!--                                        <dependency>org.sireum.library_2.12</dependency>-->
-<!--                                        <dependency>org.sireum.macros_2.12</dependency>-->
-<!--                                    </dependencies>-->
-<!--                                </requireSameVersions>-->
                                 <requireSameVersions>
                                     <dependencies>
                                         <dependency>org.sireum.art_2.12</dependency>
@@ -128,40 +109,6 @@
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
-                <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>net.alchim31.maven</groupId>
-                <artifactId>scala-maven-plugin</artifactId>
-                <version>4.2.0</version>
-                <executions>
-                    <execution>
-                        <id>scala-compile-first</id>
-                        <phase>process-resources</phase>
-                        <goals>
-                            <goal>add-source</goal>
-                            <goal>compile</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <phase>compile</phase>
-                        <goals>
-                            <goal>compile</goal>
-                            <goal>testCompile</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <scalaVersion>${scala.version}</scalaVersion>
-                </configuration>
             </plugin>
         </plugins>
     </build>

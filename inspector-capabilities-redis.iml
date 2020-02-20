@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_11">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
     <content url="file://$MODULE_DIR$">
@@ -20,13 +20,13 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.sireum:art_2.12:0.1.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: com.github.MatthewWeisCaps:inspector-capabilities:master-97ad2111fb-1" level="project" />
     <orderEntry type="library" name="Maven: io.lettuce:lettuce-core:5.2.1.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: io.netty:netty-common:4.1.43.Final" level="project" />
-    <orderEntry type="library" name="Maven: io.netty:netty-handler:4.1.43.Final" level="project" />
-    <orderEntry type="library" name="Maven: io.netty:netty-buffer:4.1.43.Final" level="project" />
-    <orderEntry type="library" name="Maven: io.netty:netty-codec:4.1.43.Final" level="project" />
-    <orderEntry type="library" name="Maven: io.netty:netty-transport:4.1.43.Final" level="project" />
-    <orderEntry type="library" name="Maven: io.netty:netty-resolver:4.1.43.Final" level="project" />
-    <orderEntry type="library" name="Maven: io.projectreactor:reactor-core:3.3.0.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-common:4.1.45.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-handler:4.1.45.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-buffer:4.1.45.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-codec:4.1.45.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-transport:4.1.45.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-resolver:4.1.45.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.projectreactor:reactor-core:3.3.2.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.reactivestreams:reactive-streams:1.0.3" level="project" />
   </component>
 </module>
