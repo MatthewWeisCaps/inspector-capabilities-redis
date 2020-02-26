@@ -14,7 +14,7 @@
     <artifactId>inspector-capabilities-redis</artifactId>
     <version>0.1-SNAPSHOT</version>
     <name>inspector-capabilities-redis</name>
-    <description>Common traits for HAMR Inspector libraries</description>
+    <description>Redis-based implementation of Inspector-Capabilities API</description>
 
     <properties>
         <generated.repo>${project.basedir}/generated/repo</generated.repo>

@@ -4,7 +4,7 @@ import art.Art;
 import art.DataContent;
 import io.lettuce.core.SetArgs;
 import io.lettuce.core.api.sync.RedisCommands;
-import org.sireum.hamr.inspector.capabilities.SlangInspector$;
+import org.sireum.hamr.inspector.capabilities.InspectorHAMRLauncher$;
 
 public final class Commands {
 
@@ -74,7 +74,7 @@ public final class Commands {
   }
 
   public static void xadd(String timestamp, long src, long dst, DataContent data) {
-    final String json = SlangInspector$.MODULE$.serializer().apply(data);
+    final String json = InspectorHAMRLauncher$.MODULE$.serializer().apply(data);
     cmds.xadd(streamKey, "timestamp", timestamp, "src", Long.toString(src), "dst", Long.toString(dst), "data", json);
   }
 
