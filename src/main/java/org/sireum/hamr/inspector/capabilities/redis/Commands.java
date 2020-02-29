@@ -67,7 +67,7 @@ public final class Commands {
 
     // Tell the Inspector that this project is shutting down, but only if this is the first time calling the method.
     // This is because shutdown hook and natural shutdown may cause two calls to this method.
-    if (reply.equals("OK")) {
+    if (reply != null && reply.equals("OK")) {
       cmds.publish(outgoingChannelKey, stopKey);
       cmds.xadd(streamKey, "timestamp", timestamp, "stop", cause);
     }
