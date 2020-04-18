@@ -7,12 +7,12 @@
     <parent>
         <groupId>com.github.MatthewWeisCaps</groupId>
         <artifactId>inspector-bom</artifactId>
-        <version>0.2-SNAPSHOT</version>
+        <version>0.4-SNAPSHOT</version>
     </parent>
 
     <groupId>org.sireum.hamr</groupId>
     <artifactId>inspector-capabilities-redis</artifactId>
-    <version>0.2-SNAPSHOT</version>
+    <version>0.4-SNAPSHOT</version>
     <name>inspector-capabilities-redis</name>
     <description>Redis-based implementation of Inspector-Capabilities API</description>
 
@@ -43,8 +43,8 @@
             <artifactId>inspector-capabilities</artifactId>
         </dependency>
         <dependency>
-            <groupId>io.lettuce</groupId>
-            <artifactId>lettuce-core</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
     </dependencies>
 
@@ -90,6 +90,18 @@
                             <source>${java.version}</source>
                             <target>${java.version}</target>
                         </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
                     </execution>
                 </executions>
             </plugin>
