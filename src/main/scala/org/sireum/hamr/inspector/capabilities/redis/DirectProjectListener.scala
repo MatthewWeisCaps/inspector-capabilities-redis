@@ -34,7 +34,7 @@ import io.lettuce.core.api.StatefulRedisConnection
 import io.lettuce.core.api.sync.RedisCommands
 import io.lettuce.core.pubsub.{RedisPubSubAdapter, StatefulRedisPubSubConnection}
 import org.sireum.Z
-import org.sireum.hamr.inspector.capabilities.{InspectorHAMRLauncher, ProjectListener}
+import org.sireum.hamr.inspector.capabilities.{InspectorCapabilitiesLauncher, ProjectListener}
 
 final class DirectProjectListener extends ProjectListener {
 
@@ -71,7 +71,7 @@ final class DirectProjectListener extends ProjectListener {
 
         val dataContentStartIndex = split(0).length + split(1).length + 2 // plus 2 for extra two commas in init String
         val dataContentString = message.substring(dataContentStartIndex)
-        val dataContent = InspectorHAMRLauncher.deserializer(dataContentString)
+        val dataContent = InspectorCapabilitiesLauncher.deserializer(dataContentString)
 
         ArtDebug.injectPort(bridgeId, portId, dataContent)
       }
